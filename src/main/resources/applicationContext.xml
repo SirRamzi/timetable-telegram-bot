@@ -11,4 +11,9 @@
         class="ru.sirramzi.telegrambot.timetable.PopMusic">
     </bean>
 
+    <bean id="musicPlayer"
+        class="ru.sirramzi.telegrambot.timetable.MusicPlayer">
+        <constructor-arg ref = "musicBean"/>
+    </bean>
+
 </beans>
