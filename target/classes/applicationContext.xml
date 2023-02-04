@@ -22,7 +22,10 @@
     </bean>
 
     <bean id="musicPlayer"
-        class="ru.sirramzi.telegrambot.timetable.MusicPlayer">
+        class="ru.sirramzi.telegrambot.timetable.MusicPlayer"
+        init-method="initMethod"
+        destroy-method="destroyMethod"
+        scope="prototype">
         <property name="musicList">
             <list>
                 <ref bean = "popMusicBean"/>

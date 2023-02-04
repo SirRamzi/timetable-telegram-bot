@@ -8,6 +8,14 @@ public class MusicPlayer {
     private String name;
     private int volume;
 
+    private void initMethod() {
+        System.out.println("Init");
+    }
+
+    private void destroyMethod() {
+        System.out.println("Destroy");
+    }
+
     public List<Music> getMusicList() {
         return musicList;
     }
