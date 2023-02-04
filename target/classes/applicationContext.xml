@@ -21,20 +21,15 @@
         class="ru.sirramzi.telegrambot.timetable.RockMusic">
     </bean>
 
-    <bean id="musicListBean"
-        class="java.util.ArrayList">
-        <constructor-arg>
+    <bean id="musicPlayer"
+        class="ru.sirramzi.telegrambot.timetable.MusicPlayer">
+        <property name="musicList">
             <list>
                 <ref bean = "popMusicBean"/>
                 <ref bean = "classicalMusicBean"/>
                 <ref bean = "rockMusicBean"/>
             </list>
-        </constructor-arg>
-    </bean>
-
-    <bean id="musicPlayer"
-        class="ru.sirramzi.telegrambot.timetable.MusicPlayer">
-        <property name = "musicList" ref = "musicListBean"/>
+        </property>
         <property name = "name" value = "${musicPlayer.name}"/>
         <property name = "volume" value = "${musicPlayer.volume}"/>
     </bean>
