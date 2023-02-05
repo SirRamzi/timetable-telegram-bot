@@ -1,6 +1,5 @@
 package ru.sirramzi.telegrambot.timetable;
 
-import java.util.List;
 import java.util.SplittableRandom;
 
 import org.springframework.beans.factory.annotation.Autowired;
