@@ -1,6 +1,8 @@
-package ru.sirramzi.telegrambot.timetable;
+package ru.sirramzi.telegrambot.timetable.genres;
 
 import org.springframework.stereotype.Component;
+
+import ru.sirramzi.telegrambot.timetable.Music;
 
 // @Component
 public class RockMusic implements Music {

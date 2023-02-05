@@ -1,4 +1,4 @@
-package ru.sirramzi.telegrambot.timetable;
+package ru.sirramzi.telegrambot.timetable.config;
 
 import java.util.Arrays;
 import java.util.List;
@@ -7,6 +7,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+
+import ru.sirramzi.telegrambot.timetable.Music;
+import ru.sirramzi.telegrambot.timetable.MusicPlayer;
+import ru.sirramzi.telegrambot.timetable.genres.ClassicalMusic;
+import ru.sirramzi.telegrambot.timetable.genres.PopMusic;
+import ru.sirramzi.telegrambot.timetable.genres.RockMusic;
 
 @Configuration
 @ComponentScan("ru.sirramzi.telegrambot.timetable")

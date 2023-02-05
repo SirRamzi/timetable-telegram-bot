@@ -1,4 +1,4 @@
-package ru.sirramzi.telegrambot.timetable;
+package ru.sirramzi.telegrambot.timetable.genres;
 
 public enum MusicGenry {
     CLASSICAL,

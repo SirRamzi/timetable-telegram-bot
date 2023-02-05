@@ -4,7 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.SplittableRandom;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class MusicPlayer {
+    @Value("${musicPlayer.name}")
+    private String name;
+    @Value("${musicPlayer.volume}")
+    private int volume;
     private List<Music> musicList = new ArrayList<>();
 
     public MusicPlayer(List<Music> musicList) {
@@ -13,8 +19,7 @@ public class MusicPlayer {
 
     public String playMusic() {
         int songNumber = new SplittableRandom().nextInt(musicList.size());
-        System.out.println("Playing: " + musicList.get(songNumber).getSong());
-        return musicList.get(songNumber).getSong();
+        return "Playing " + musicList.get(songNumber).getSong() + " with volume " + volume;
     }
 
 }

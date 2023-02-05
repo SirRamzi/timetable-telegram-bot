@@ -2,11 +2,13 @@ package ru.sirramzi.telegrambot.timetable;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import ru.sirramzi.telegrambot.timetable.config.SpringConfig;
+
 public class TestSpring {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playMusic();
+        System.out.println(musicPlayer.playMusic());;
         context.close();
     }
 }
