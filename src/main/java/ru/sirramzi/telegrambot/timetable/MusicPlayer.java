@@ -1,36 +1,43 @@
 package ru.sirramzi.telegrambot.timetable;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.SplittableRandom;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MusicPlayer {
-    List<Music> musicList = new ArrayList<>();
-    private Music music;
-    ClassicalMusic classicalMusic;
-    PopMusic popMusic;
-    RockMusic rockMusic;
+    private Music classicalMusic;
+    private Music rockMusic;
+    private Music popMusic;
+    private Music currentMusic;
 
     @Autowired
-    public MusicPlayer(ClassicalMusic classicalMusic, PopMusic popMusic, RockMusic rockMusic) {
+    public MusicPlayer(@Qualifier("classicalMusic") Music classicalMusic, @Qualifier("rockMusic") Music rockMusic,
+            @Qualifier("popMusic") Music popMusic) {
         this.classicalMusic = classicalMusic;
-        this.popMusic = popMusic;
         this.rockMusic = rockMusic;
+        this.popMusic = popMusic;
     }
 
-    public List<Music> getMusicList() {
-        return musicList;
-    }
-
-    public void setMusicList(List<Music> musicList) {
-        this.musicList = musicList;
-    }
-
-    public String playMusic() {
-        return "Playing: " + classicalMusic.getSong();
+    public String playMusic(MusicGenry genry) {
+        switch (genry) {
+            case CLASSICAL:
+                currentMusic = classicalMusic;
+                break;
+            case ROCK:
+                currentMusic = rockMusic;
+                break;
+            case POP:
+                currentMusic = popMusic;
+                break;
+            default:
+                break;
+        }
+        System.out.println(currentMusic.getSong().get(new SplittableRandom().nextInt(3)));
+        return currentMusic.getSong().get(new SplittableRandom().nextInt(3));
     }
 
 }
